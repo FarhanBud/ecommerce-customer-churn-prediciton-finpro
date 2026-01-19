@@ -5,7 +5,7 @@
 Group Beta 
 - Muhamad Farhan Budiana
 - Muhammad Ghifari
-- Shadrina 
+- Shadrina Putri Nabila
 
 ### 1 Business Context and Problem Background 
 
