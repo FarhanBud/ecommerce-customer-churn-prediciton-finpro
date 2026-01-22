@@ -1,11 +1,18 @@
 # E-Commerce Customer Churn Analysis and Prediction
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ecommerce-customer-churn-prediciton-finpro-beta.streamlit.app/)
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Library](https://img.shields.io/badge/Library-Scikit_Learn-orange)
+![Status](https://img.shields.io/badge/Status-Completed-green)
+
 **Final Project - Data Science & Machine Learning Program**
 **Institution:** Purwadhika Digital School
 **Group Beta:**
 - Muhamad Farhan Budiana
 - Muhammad Ghifari
 - Shadrina Putri Nabila
+
+---
 
 ## Project Overview
 
@@ -16,10 +23,9 @@ The analysis follows a comprehensive end-to-end data science workflow, including
 ## Business Context and Objective
 
 ### Problem Statement
-<img width="613" height="511" alt="image" src="https://github.com/user-attachments/assets/5d9daa6d-9dd1-49d0-90c3-25e8b87856e5" />
+<img width="613" alt="Churn Context Illustration" src="https://github.com/user-attachments/assets/5d9daa6d-9dd1-49d0-90c3-25e8b87856e5">
 
-
-The company is currently experiencing a customer churn rate of approximately 16.8%. The lack of a predictive mechanism results in a reactive approach to customer retention, leading to inefficient marketing spend and lost revenue opportunities.
+The company is currently experiencing a customer churn rate of approximately **16.8%**. The lack of a predictive mechanism results in a reactive approach to customer retention, leading to inefficient marketing spend and lost revenue opportunities.
 
 ### Objectives
 1.  **Predictive Modeling:** Develop a binary classification model to identify customers at high risk of churn.
@@ -53,90 +59,82 @@ The **K-Nearest Neighbors (KNN)** algorithm was selected as the final model afte
 
 -   **Hyperparameters:** `n_neighbors=11`, `weights='distance'`, `metric='euclidean'`
 -   **Recall (Test Set):** ~91%
--   **Interpretation:** The model successfully identifies approximately 91% of customers who are actually at risk of churning. This high recall ensures that retention efforts cover the vast majority of at-risk customers.
+-   **Interpretation:** The model successfully identifies approximately **91%** of customers who are actually at risk of churning. This high recall ensures that retention efforts cover the vast majority of at-risk customers.
 
-### Conclusion and Recommendation
+## Conclusion and Recommendation
 
-After going through a comprehensive *Data Science* workflow—ranging from data cleaning and handling *data leakage* to model optimization—we have reached the final stage to draw strategic conclusions. This section summarizes the technical performance of the model, its potential business impact, and actionable recommendations for the company.
+### Technical Conclusion
+Based on the evaluation results on the Test Set, the project concludes the following:
+1.  **Best Model:** KNN was selected as the best-performing model due to its high sensitivity to minority class patterns.
+2.  **Metric Performance:** The model achieved a Recall score of ~91% on the Churn class.
+3.  **Risk Mitigation:** The False Negative rate is very low, ensuring that the business does not miss the opportunity to retain at-risk customers.
 
-#### Project Conclusion (Technical Summary)
+### Business Impact Analysis
+Using a simulation with 10,000 customers and a 16.8% churn rate:
+* **Reactive Approach (Without Model):** Estimated loss of ~$84,000 due to undetected churn.
+* **Proactive Approach (With Model):** Total cost reduced to ~$22,840 (Retention Cost + Remaining Loss).
+* **Potential Savings:** ~$61,160 (saving approximately 73% of churn-associated costs).
 
-Based on the evaluation results on the *Test Set*, the project concludes the following:
+### Strategic Recommendations
+1.  **Focus on the "Golden Period":** Churn risk is highest at low Tenure (new customers). Create a special Onboarding Program for the first 3 months.
+2.  **Improve Complaint Mechanism:** Customers who file a Complaint have a high tendency to churn. Implement a priority handling system ("Service Recovery Paradox").
+3.  **Optimize Mobile App:** Users who rarely open the app (low `HourSpendOnApp`) are at risk. Use personalized push notifications to re-engage inactive users.
 
-1.  **Best Model:** The **K-Nearest Neighbors (KNN)** algorithm was selected as the best-performing model after undergoing *Hyperparameter Tuning* and *Benchmarking*.
-2.  **Metric Performance (Recall):**
-    * The model achieved a **Recall score of ~91%** on the Churn class.
-    * **Interpretation:** The model is capable of detecting approximately **9 out of 10 customers** who are actually at risk of churning.
-    * The *False Negative* rate (missed detection) is very low, which is the primary priority in *Churn Prediction* cases.
+## Model Deployment
 
-#### Business Impact Analysis
+The final model has been deployed as an interactive web application using Streamlit to facilitate real-time prediction for business stakeholders.
 
-What is the economic value of this model for the company? Let's perform a simple simulation.
+**Access the Application:**
+[https://ecommerce-customer-churn-prediciton-finpro-beta.streamlit.app/](https://ecommerce-customer-churn-prediciton-finpro-beta.streamlit.app/)
 
-**Business Assumptions:**
-* **Customer Acquisition Cost (CAC):** $50 (Marketing/ad cost to replace 1 lost customer).
-* **Retention Cost:** $10 (Discount vouchers/promos to retain customers identified as potential Churn).
-* **Total Customers:** 10,000 users.
-* **Churn Rate:** 16.8% (approximately 1,680 customers at risk of churn).
+**Application Features:**
+* **Input Interface:** User-friendly sidebar for entering customer data.
+* **Real-time Prediction:** Instant classification (Churn vs. Stay).
+* **Probability Score:** Displays the model's confidence level for the prediction.
 
-**Scenario 1: Without Model (Reactive)**
-The company does not know who will leave. All 1,680 churned customers are lost and must be replaced by new customers.
-* Total Loss Cost = 1,680 x $50 (CAC) = **$84,000**
-
-**Scenario 2: With Machine Learning Model (Proactive)**
-The model detects 91% of potential churners (Recall 91%).
-* Detected Customers: 91% x 1,680 = 1,529 customers.
-* Retention Cost: 1,529 x $10 = $15,290.
-* Remaining Undetected Churners (Lost): 151 customers x $50 = $7,550.
-* **Total Cost:** $15,290 + $7,550 = **$22,840**
-
-**POTENTIAL SAVINGS:**
-$84,000 - $22,840 = **$61,160 (Saving ~73% of Churn Costs)**
-
-> *Conclusion: Implementing this model has the potential to save the company's budget significantly by shifting the marketing strategy to be more targeted and efficient.*
-
-#### Business Conclusion (Strategic Recommendations)
-
-Based on the results of *Exploratory Data Analysis (EDA)* and patterns learned by the model, here are strategic recommendations to reduce the Churn Rate:
-
-1.  **Focus on the "Golden Period" (Early Months)**
-    * *Insight:* Data shows the highest churn risk occurs at low **Tenure** (new customers).
-    * *Action:* Create a special **Onboarding Program** for the first 3 months. Provide intensive application usage guides and *gamification* to increase *engagement* in the early subscription period.
-
-2.  **Improve Complaint Mechanism**
-    * *Insight:* Customers who have filed a **Complain** have a very high tendency to churn.
-    * *Action:* Form a priority *Task Force* to handle complaints. Every incoming complaint must be resolved within <24 hours with small compensation (e.g., points/discounts) as an apology (implementing the "Service Recovery Paradox").
-
-3.  **Optimize Mobile App User Experience**
-    * *Insight:* Users who *Uninstall* or rarely open the application are detected as strong churn signals.
-    * *Action:* Use personalized **Push Notifications** (avoiding spam) to remind users who have been inactive for >7 days, offering exclusive *App-Only* promotions.
-
-### 7.4 Model Implementation
-
-To enable this model to be used by the IT team or integrated into a business dashboard, we will save the final model into a ready-to-use file format (`pickle`).
 ## Repository Structure
 
--   **data/**: Contains the dataset files used for analysis.
--   **model/**: Stores the serialized model artifacts (pickle files) for deployment.
--   **dashboard/**: Directory for the deployment application (Streamlit).
--   **notebooks/**: Jupyter notebooks containing the detailed analysis and modeling code.
--   **requirements.txt**: List of Python dependencies required to reproduce the environment.
+```text
+├── data/                            # Dataset files
+├── model/                           # Serialized model artifacts (.pkl)
+├── notebooks/                       # Jupyter notebooks for analysis
+├── app.py                           # Streamlit Application Source Code
+├── README.md                        # Project Documentation
+└── requirements.txt                 # Python dependencies
+
+```
 
 ## Installation and Usage
 
-To replicate the analysis or run the model:
+To replicate the analysis or run the application locally, follow these steps:
 
-1.  Clone the repository:
+1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/your-username/E-Commerce-Churn-Analysis.git](https://github.com/your-username/E-Commerce-Churn-Analysis.git)
+    git clone [https://github.com/your-username/ecommerce-customer-churn-prediciton-finpro.git](https://github.com/your-username/ecommerce-customer-churn-prediciton-finpro.git)
     ```
 
-2.  Install the required dependencies:
+2.  **Install Dependencies:**
+    It is recommended to use a virtual environment. Install the required libraries using:
     ```bash
     pip install -r requirements.txt
     ```
 
-3.  Run the Jupyter Notebook:
+3.  **Run the Analysis (Jupyter Notebook):**
+    To view the detailed data exploration and model training process:
     ```bash
     jupyter notebook
     ```
+
+4.  **Run the Web Application (Streamlit):**
+    To launch the interactive prediction dashboard locally:
+    ```bash
+    streamlit run app.py
+    ```
+
+## Tools and Technologies
+
+- **Programming Language:** Python
+- **Libraries:** Pandas, NumPy, Scikit-Learn (v1.5.2), Imbalanced-Learn, XGBoost, Matplotlib, Seaborn
+- **Deployment:** Streamlit Cloud
+- **Model Serialization:** Pickle
+- **Editor:** Jupyter Notebook, Visual Studio Code
