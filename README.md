@@ -9,7 +9,7 @@
 **Institution:** Purwadhika Digital School
 **Group Beta:**
 - Muhamad Farhan Budiana
-- Muhammad Ghifari
+- Muhammad Giffari Putra Pradana
 - Shadrina Putri Nabila
 
 ---
