@@ -144,3 +144,4 @@ To replicate the analysis or run the application locally, follow these steps:
 - **Deployment:** Streamlit Cloud
 - **Model Serialization:** Pickle
 - **Editor:** Jupyter Notebook, Visual Studio Code
+- **Dashboard:** Tableau
