@@ -16,7 +16,7 @@ The analysis follows a comprehensive end-to-end data science workflow, including
 ## Business Context and Objective
 
 ### Problem Statement
-![Uploading image.png…]()
+![Uploading churn1.png…]()
 
 The company is currently experiencing a customer churn rate of approximately 16.8%. The lack of a predictive mechanism results in a reactive approach to customer retention, leading to inefficient marketing spend and lost revenue opportunities.
 
