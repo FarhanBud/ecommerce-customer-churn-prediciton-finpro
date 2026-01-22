@@ -87,6 +87,12 @@ The final model has been deployed as an interactive web application using Stream
 **Access the Application:**
 [https://ecommerce-customer-churn-prediciton-finpro-beta.streamlit.app/](https://ecommerce-customer-churn-prediciton-finpro-beta.streamlit.app/)
 
+Preview 
+<img width="1910" height="898" alt="image" src="https://github.com/user-attachments/assets/3baa665d-5922-416e-ba67-81957488a5eb" />
+<img width="1908" height="901" alt="image" src="https://github.com/user-attachments/assets/2b376f3e-f004-438b-a26c-d67c8852815c" />
+
+
+
 **Application Features:**
 * **Input Interface:** User-friendly sidebar for entering customer data.
 * **Real-time Prediction:** Instant classification (Churn vs. Stay).
